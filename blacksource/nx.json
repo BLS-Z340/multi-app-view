@@ -1,0 +1,48 @@
+{
+  "npmScope": "blacksource",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "dashboard": {
+      "tags": []
+    },
+    "dashboard-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dashboard"]
+    },
+    "app1": {
+      "tags": []
+    },
+    "app1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app1"]
+    },
+    "app2": {
+      "tags": []
+    },
+    "app2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app2"]
+    }
+  }
+}
