@@ -10,13 +10,17 @@ import { CommonModule } from '@angular/common';
   declarations: [AppComponent, View1Component, View2Component, NavComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(
-      [
-        { path: 'one', component: View1Component },
-        { path: 'two', component: View2Component },
-        { path: '', redirectTo: 'one' },
-      ]
-    ),
+    RouterModule.forChild([
+      { path: '', redirectTo: 'one' },
+      {
+        path: '',
+        component: AppComponent,
+        children: [
+          { path: 'one', component: View1Component },
+          { path: 'two', component: View2Component },
+        ],
+      },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
